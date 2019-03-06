@@ -1,7 +1,7 @@
 /*---------------------------------------------------------------*/
 /*--------------  Galindo Chavez Lisset America -----------------*/
 /*-----------------  Version: Visual Studio 2017 ----------------*/
-/* ---------------------   Práctica 4  --------------------------*/
+/* ---------------------   PrÃ¡ctica 5  --------------------------*/
 /*-----------------  Instrucciones de uso -----------------------*/
 /*--------     Tecla     ----    Movimiento   -------------------*/
 /*--------       D       ----     Derecha     -------------------*/
@@ -16,13 +16,13 @@
 /*--------  Flecha izq   ---- Gira izquierda  -------------------*/
 /*--------       T       ----     Hombro      -------------------*/
 /*--------       Y       ----      Codo       -------------------*/
-/*--------       U       ----     Muñeca      -------------------*/
+/*--------       U       ----     MuÃ±eca      -------------------*/
 /*--------       I       ----   Dedo pulgar   -------------------*/
 /*--------       O       ----   Dedo indice   -------------------*/
 /*--------       P       ----   Dedo medio    -------------------*/
 /*--------       L       ----   Dedo anular   -------------------*/
 /*-----------------       2019-2      ---------------------------*/
-/*------------- Computación gráfica e interacción humano computadora ---------------*/
+/*------------- ComputaciÃ³n grÃ¡fica e interacciÃ³n humano computadora ---------------*/
 #include <glew.h>
 #include <glfw3.h>
 
@@ -208,7 +208,7 @@ void display(void)
 
 	//Palma
 	model = glm::translate(model, glm::vec3(1.5, 0, 0));
-	model = glm::rotate(model, glm::radians(angMa), glm::vec3(0, 1, 0)); //Simula muñeca
+	model = glm::rotate(model, glm::radians(angMa), glm::vec3(0, 1, 0)); //Simula muÃ±eca
 	modelTemp = model = glm::translate(model, glm::vec3(0.5, 0, 0));
 	model = glm::scale(model, glm::vec3(1.0f, 1.0f, 0.3f));
 	projectionShader.setVec3("aColor", glm::vec3(0, 1, 0));
@@ -218,7 +218,7 @@ void display(void)
 
 	//Pulgar
 	model = glm::translate(model, glm::vec3(-0.35, 0.5, 0));
-	model = glm::rotate(model, glm::radians(angPu), glm::vec3(1, 0, 0)); //Simula muñeca
+	model = glm::rotate(model, glm::radians(angPu), glm::vec3(1, 0, 0)); //Simula muÃ±eca
 	modelTemp = model = glm::translate(model, glm::vec3(0, 0.15, 0));
 	model = glm::scale(model, glm::vec3(0.3f, 0.3f, 0.3f));
 	projectionShader.setVec3("aColor", glm::vec3(1, 0, 1));
@@ -228,7 +228,7 @@ void display(void)
 
 	//Pulgar2
 	model = glm::translate(model, glm::vec3(0.0, 0.15, 0));
-	model = glm::rotate(model, glm::radians(angPu*0.7f), glm::vec3(1, 0, 0)); //Simula muñeca
+	model = glm::rotate(model, glm::radians(angPu*0.7f), glm::vec3(1, 0, 0)); //Simula muÃ±eca
 	modelTemp = model = glm::translate(model, glm::vec3(0, 0.15, 0));
 	model = glm::scale(model, glm::vec3(0.3f, 0.3f, 0.3f));
 	projectionShader.setVec3("aColor", glm::vec3(1, 0, 0.5));
@@ -326,7 +326,7 @@ void display(void)
 	projectionShader.setMat4("model", model);
 	glDrawArrays(GL_QUADS, 0, 24);
 	
-	//Meñique
+	//MeÃ±ique
 	model = modelTemp2;
 	model = glm::translate(model, glm::vec3(0.5, -0.375, 0));
 	model = glm::rotate(model, glm::radians(-angMq), glm::vec3(0, 1, 0));
@@ -337,7 +337,7 @@ void display(void)
 	glDrawArrays(GL_QUADS, 0, 24);
 	model = modelTemp;
 
-	//Meñique2
+	//MeÃ±ique2
 	model = glm::translate(model, glm::vec3(0.1, 0, 0));
 	model = glm::rotate(model, glm::radians(-angMq*0.7f), glm::vec3(0, 1, 0));
 	modelTemp = model = glm::translate(model, glm::vec3(0.1, 0, 0));
@@ -347,7 +347,7 @@ void display(void)
 	glDrawArrays(GL_QUADS, 0, 24);
 	model = modelTemp;
 
-	//Meñique3
+	//MeÃ±ique3
 	model = glm::translate(model, glm::vec3(0.1, 0, 0));
 	model = glm::rotate(model, glm::radians(-angMq * 0.4f), glm::vec3(0, 1, 0));
 	modelTemp = model = glm::translate(model, glm::vec3(0.1, 0, 0));
@@ -410,7 +410,7 @@ int main()
         glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-		//Mi función de dibujo
+		//Mi funciÃ³n de dibujo
 		display();
 
         // glfw: swap buffers and poll IO events (keys pressed/released, mouse moved etc.)
