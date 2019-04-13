@@ -82,7 +82,7 @@ unsigned int	t_smile,
 //For model
 float movKit_z = 0.0f; //animacion
 bool play = false;
-float dir = 1.0f;
+float dir = 0.03f;
 
 
 unsigned int generateTextures(const char* filename, bool alfa)
@@ -237,10 +237,9 @@ void myData()
 void animate(void)
 {
 	if (play) {//Reproduce toda la secuencia de animacion
-		movKit_z += 0.03f;
-		printf("%f\n", movKit_z);
-
-		llanta += 0.2f;
+		movKit_z += dir;
+		//printf("%f\n", movKit_z);
+		llanta += dir*5;
 	}
 	
 }
@@ -266,7 +265,7 @@ void display(Shader shader, Model modelo, Model llantas)
 	shader.setMat4("projection", projection);
 
 	model = glm::rotate(model, glm::radians(90.0f), glm::vec3(0.0f, 1.0f, 0.0f));
-	tmp = model = glm::translate(model, glm::vec3(15.0f, -1.75f, dir*movKit_z));
+	tmp = model = glm::translate(model, glm::vec3(15.0f, -1.75f, movKit_z));
 	model = glm::scale(model, glm::vec3(0.5f, 0.5f, 0.5f));
 	shader.setMat4("model", model);
 	modelo.Draw(shader);
@@ -400,19 +399,14 @@ void my_input(GLFWwindow *window)
 		camera.ProcessKeyboard(LEFT, (float)deltaTime);
 	if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS)
 		camera.ProcessKeyboard(RIGHT, (float)deltaTime);
-	if (glfwGetKey(window, GLFW_KEY_P) == GLFW_PRESS)
+	if (glfwGetKey(window, GLFW_KEY_P) == GLFW_PRESS) {
 		play = true;
+		dir = 0.03f;
+	}
 	if (glfwGetKey(window, GLFW_KEY_O) == GLFW_PRESS)
 		play = false;
 	if (glfwGetKey(window, GLFW_KEY_I) == GLFW_PRESS) {
-		if (glfwGetKey(window, GLFW_KEY_RIGHT_SHIFT) == GLFW_PRESS) {
-			dir = -1.0f*dir;
-		}
-		else
-		{
-			dir = -1.0f;
-		}
-	
+		dir = -0.03f;
 	}
 }
 
