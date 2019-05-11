@@ -2,7 +2,7 @@
 /*---------------------------------------------------------------*/
 /*----------- Alumna: Galindo Chavez Lisset America -------------*/
 /*-----------------  Version: Visual Studio 2017 ----------------*/
-/* ---------------------   Pr·ctica 11  --------------------------*/
+/* ---------------------   Pr√°ctica 12  --------------------------*/
 /*-----------------  Instrucciones de uso -----------------------*/
 /*--------     Tecla     ----    Movimiento   -------------------*/
 /*--------       D       ----     Derecha     -------------------*/
@@ -27,7 +27,7 @@
 /*--------    Mouse      ---- Rota la camara  -------------------*/
 /*-------------- Fecha de entrega: 29/04/2019 -------------------*/
 /*-----------------       2019-2      ---------------------------*/
-/*------------- ComputaciÛn gr·fica e interacciÛn humano computadora ---------------*/
+/*------------- Computaci√≥n gr√°fica e interacci√≥n humano computadora ---------------*/
 //#define STB_IMAGE_IMPLEMENTATION
 #include <glew.h>
 #include <glfw3.h>
@@ -93,7 +93,7 @@ float	posX = 0.0f,
 		rotBrazoDer = 0.0f,
 		rotCabeza = 0.0f;
 
-#define MAX_FRAMES 20 //N˙mero m·ximo de keyframes
+#define MAX_FRAMES 20 //N√∫mero m√°ximo de keyframes
 int i_max_steps = 190; //Numero maximo entre cada keyframe (intervalo)
 int i_curr_steps = 0; //Indice del frame
 typedef struct _frame
@@ -470,7 +470,7 @@ int main()
 	Model cabeza = ((char *)"Models/Personaje/cabeza.obj");
 	Model pisoModel = ((char *)"Models/piso/piso.obj");
 
-	//InicializaciÛn de KeyFrames
+	//Inicializaci√≥n de KeyFrames
 
 	for (int i = 0; i < MAX_FRAMES; i++)
 	{
